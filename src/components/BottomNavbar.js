@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaHome, FaFeatherAlt, FaEnvelope, FaFileAlt } from 'react-icons/fa';
+import {IconContext} from 'react-icons';
 
 
 const style ={
@@ -12,6 +14,7 @@ const style ={
     height: 50,
     display: 'flex',
     justifyContent: 'center',
+    zIndex: 100,
   },
   Buttons:{
     display: 'inline-block',
@@ -21,18 +24,22 @@ const style ={
     border: 'none',
     color: '#66FCF3',
     backgroundColor: '#272727',
+    marginRight: 10,
+    marginLeft: 10,
   }
 }
 
 const BottomNavbar = () => {
   return (
     <React.Fragment>
+    <IconContext.Provider value={{size: "2em"}}>
     <div style={style.Bar}>
-    <button style={style.Buttons}>Home</button>
-    <button style={style.Buttons}>Blog</button>
-    <button style={style.Buttons}>Contact</button>
-    <button style={style.Buttons}>CV</button>
+    <button style={style.Buttons}><FaHome /></button>
+    <button style={style.Buttons}><FaFeatherAlt /></button>
+    <button style={style.Buttons}><FaEnvelope /></button>
+    <button style={style.Buttons}><FaFileAlt /></button>
     </div>
+    </IconContext.Provider>
     </React.Fragment>
   )
 }

@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+import {motion} from 'framer-motion';
+import linkedin from '../assets/linkedin.png';
+import github from '../assets/github.png';
+import email from '../assets/gmail.png';
+
 
 const ProfileCard = () => {
     return (
         <aside className='profile-card'>
         <header>
-          <a href='http://victory-design.ru/'>
+          <a href='https://www.diegopronesti.com.ar'>
             <img
               src='https://avatars2.githubusercontent.com/u/34582381?s=460&v=4'
               alt='avatar'
@@ -24,20 +29,27 @@ const ProfileCard = () => {
 
         <ul className='profile-social-links'>
           <li>
-            <a href='https://www.facebook.com/v1ctory'>
-              Github
+            <a href='https://github.com/Pronesti'>
+            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            <img src={github} alt="github" />
+            </motion.div>
             </a>
           </li>
 
           <li>
-            <a href='http://themeforest.net/user/Victory-Design'>
-              Linkedin
+            <a href='https://ar.linkedin.com/in/diego-pronesti'>
+            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            <img src={linkedin} alt="linkedin" />
+            </motion.div>
             </a>
           </li>
 
           <li>
-            <a href='https://codepen.io/VictoryDesign/'>
-             Email 
+            <a href='mailto:dieh.diego@gmail.com'>
+            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            <img src={email} alt="email" />
+            </motion.div>
+            
             </a>
           </li>
         </ul>
