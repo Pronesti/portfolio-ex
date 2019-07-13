@@ -1,2 +1,5 @@
 export {default as Navbar} from './Navbar'
 export {default as BottomNavbar} from './BottomNavbar'
+export {default as ProfileCard} from './ProfileCard'
+export {default as ProjectList} from './ProjectList'
+export {default as ProjectCard} from './ProjectCard'
