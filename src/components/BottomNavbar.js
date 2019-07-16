@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaHome, FaFeatherAlt, FaEnvelope, FaFileAlt } from 'react-icons/fa';
+import { FaHome, FaFeatherAlt, FaFileAlt } from 'react-icons/fa';
 import {IconContext} from 'react-icons';
 
 
@@ -36,8 +36,7 @@ const BottomNavbar = () => {
     <div style={style.Bar}>
     <button style={style.Buttons}><FaHome /></button>
     <button style={style.Buttons}><FaFeatherAlt /></button>
-    <button style={style.Buttons}><FaEnvelope /></button>
-    <button style={style.Buttons}><FaFileAlt /></button>
+    <a style={style.Buttons} href="https://drive.google.com/file/d/1nrfufMZC3klhV1tRadNptU1-aHY52QHG/view?usp=sharing"><FaFileAlt /></a>
     </div>
     </IconContext.Provider>
     </React.Fragment>
