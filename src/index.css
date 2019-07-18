@@ -1,17 +1,19 @@
-html, body{
-    height: 100%;
-    background-color: #272727;
-    background: url(./assets/bg-img.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
+html,
+body {
+  height: 100%;
+  /*background-color: #272727;
+    background: url(./assets/bg-img.jpg) no-repeat center center fixed */
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
-/* */ 
+/* */
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 400;
   margin: 0px 0px 5px 0px;
 }
@@ -25,19 +27,25 @@ p {
   margin: 0px;
 }
 .profile-card {
-background: #272727;
-width: 56px;
-height: 56px;
+  background: #272727;
+
   z-index: 2;
-overflow: hidden;
+  overflow: hidden;
   opacity: 0;
-  margin-top: 70px;
--webkit-border-radius: 0%;
-border-radius: 0%;
--webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-box-shadow: 0px 3px 6px rgba(0 ,0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-  -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_landscape 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_landscape 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  -webkit-border-radius: 0%;
+  border-radius: 0%;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
+    0px 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+      forwards,
+    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    materia_landscape 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    materia_landscape 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
   width: 50%;
   margin: 0 auto;
 }
@@ -47,8 +55,8 @@ box-shadow: 0px 3px 6px rgba(0 ,0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
   padding: 40px 20px 30px 20px;
   display: inline-block;
   float: left;
-  border-right: 2px dashed #EEEEEE;
-background: #272727;
+  border-right: 2px dashed #eeeeee;
+  background: #272727;
   color: #fafafa;
   margin-top: 50px;
   opacity: 0;
@@ -57,7 +65,7 @@ background: #272727;
   animation: moveIn 1s 3.1s ease forwards;
 }
 .profile-card header h1 {
-  color: #66FCF1;
+  color: #66fcf1;
 }
 .profile-card header a {
   display: inline-block;
@@ -81,12 +89,12 @@ background: #272727;
   box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
 .profile-card .profile-bio {
-  width: 175px;        
+  width: 175px;
   height: 180px;
   display: inline-block;
   float: right;
   padding: 50px 20px 30px 20px;
-background: #272727;
+  background: #272727;
   color: #9e9e9e;
   margin-top: 50px;
   text-align: center;
@@ -95,7 +103,7 @@ background: #272727;
   animation: moveIn 1s 3.1s ease forwards;
 }
 .profile-social-links {
-  width: 218px;        
+  width: 218px;
   display: inline-block;
   float: right;
   margin: 0px;
@@ -117,10 +125,9 @@ background: #272727;
   text-align: center;
 }
 
-
 .profile-social-links li a:before {
   display: block;
-  content: "";
+  content: '';
   background: rgba(0, 0, 0, 0.3);
   position: absolute;
   left: 0px;
@@ -144,323 +151,335 @@ background: #272727;
   width: 24px;
 }
 
-
 @media screen and (min-aspect-ratio: 4/3) {
   body {
-      background-size: 100% auto;
+    background-size: 100% auto;
   }
   body:before {
-      width: 0px;
+    width: 0px;
   }
   @-webkit-keyframes puff {
-      0% {
-          top: 100%;
-          width: 0px;
-          padding-bottom: 0px;
-      }
+    0% {
+      top: 100%;
+      width: 0px;
+      padding-bottom: 0px;
+    }
     100% {
-          top: 50%;
-          width: 100%;
-          padding-bottom: 100%;
-      }	
+      top: 50%;
+      width: 100%;
+      padding-bottom: 100%;
+    }
   }
   @keyframes puff {
-      0% {
-          top: 100%;
-          width: 0px;
-          padding-bottom: 0px;
-      }
+    0% {
+      top: 100%;
+      width: 0px;
+      padding-bottom: 0px;
+    }
     100% {
-          top: 50%;
-          width: 100%;
-          padding-bottom: 100%;
-      }	
+      top: 50%;
+      width: 100%;
+      padding-bottom: 100%;
+    }
   }
 }
 @media screen and (min-height: 480px) {
-.profile-card {
-  -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_portrait 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_portrait 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-}
-.profile-card header {
-      width: auto;
-      height: auto;
-      padding: 30px 20px;
-      display: block;
-      float: none;
-      border-right: none;
+  .profile-card {
+    -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+        forwards,
+      moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+      moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+      materia_portrait 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+    animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+      moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+      moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+      materia_portrait 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  }
+  .profile-card header {
+    width: auto;
+    height: auto;
+    padding: 30px 20px;
+    display: block;
+    float: none;
+    border-right: none;
   }
   .profile-card .profile-bio {
-      width: auto;
-      height: auto;
-      padding: 15px 20px 30px 20px;
-      display: block;
-      float: none; 
+    width: auto;
+    height: auto;
+    padding: 15px 20px 30px 20px;
+    display: block;
+    float: none;
   }
   .profile-social-links {
-      width: 100%;       
-      display: block;
-      float: none; 
+    width: 100%;
+    display: block;
+    float: none;
   }
 }
 @media screen and (min-aspect-ratio: 4/3) {
   body {
-      background-size: 100% auto;
+    background-size: 100% auto;
   }
   body:before {
-      width: 0px;
-  -webkit-animation: puff_landscape 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
-  animation: puff_landscape 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
-}
+    width: 0px;
+    -webkit-animation: puff_landscape 0.5s 1.8s
+        cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+      borderRadius 0.2s 2.3s linear forwards;
+    animation: puff_landscape 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+        forwards,
+      borderRadius 0.2s 2.3s linear forwards;
+  }
 }
 @-webkit-keyframes init {
   0% {
     width: 0px;
     height: 0px;
   }
-100% {
-      width: 56px;
-      height: 56px;
-      margin-top: 0px;
-      opacity: 1;
-  }	
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
+  }
 }
 @keyframes init {
   0% {
     width: 0px;
     height: 0px;
   }
-100% {
-      width: 56px;
-      height: 56px;
-      margin-top: 0px;
-      opacity: 1;
-  }	
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
+  }
 }
 @-webkit-keyframes puff_portrait {
   0% {
-      top: 100%;
-      height: 0px;
-      padding: 0px;
+    top: 100%;
+    height: 0px;
+    padding: 0px;
   }
-100% {
-      top: 50%;
-      height: 100%;
-      padding: 0px 100%;
-  }	
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
 }
 @keyframes puff_portrait {
   0% {
-      top: 100%;
-      height: 0px;
-      padding: 0px;
+    top: 100%;
+    height: 0px;
+    padding: 0px;
   }
-100% {
-      top: 50%;
-      height: 100%;
-      padding: 0px 100%;
-  }	
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
 }
 @-webkit-keyframes puff_landscape {
-0% {
-  top: 100%;
-  width: 0px;
-  padding-bottom: 0px;
-}
-100% {
-  top: 50%;
-  width: 100%;
-  padding-bottom: 100%;
-}	
+  0% {
+    top: 100%;
+    width: 0px;
+    padding-bottom: 0px;
+  }
+  100% {
+    top: 50%;
+    width: 100%;
+    padding-bottom: 100%;
+  }
 }
 @keyframes puff_landscape {
-0% {
-  top: 100%;
-  width: 0px;
-  padding-bottom: 0px;
-}
-100% {
-  top: 50%;
-  width: 100%;
-  padding-bottom: 100%;
-}	
+  0% {
+    top: 100%;
+    width: 0px;
+    padding-bottom: 0px;
+  }
+  100% {
+    top: 50%;
+    width: 100%;
+    padding-bottom: 100%;
+  }
 }
 @-webkit-keyframes borderRadius {
   0% {
-      -webkit-border-radius: 50%;
+    -webkit-border-radius: 50%;
   }
-100% {
-      -webkit-border-radius: 0px;
-  }	
+  100% {
+    -webkit-border-radius: 0px;
+  }
 }
 @keyframes borderRadius {
   0% {
-      -webkit-border-radius: 50%;
+    -webkit-border-radius: 50%;
   }
-100% {
-      border-radius: 0px;
-  }	
+  100% {
+    border-radius: 0px;
+  }
 }
 @-webkit-keyframes moveDown {
   0% {
-       top: 50%;
+    top: 50%;
   }
-50% {
-   top: 40%;
+  50% {
+    top: 40%;
   }
   100% {
-     top: 100%;
-  }	
+    top: 100%;
+  }
 }
 @keyframes moveDown {
   0% {
-       top: 50%;
+    top: 50%;
   }
-50% {
-   top: 40%;
+  50% {
+    top: 40%;
   }
   100% {
-     top: 100%;
-  }	
+    top: 100%;
+  }
 }
 @-webkit-keyframes moveUp {
   0% {
-      background: #66FCF1;
-      top: 100%;
+    background: #66fcf1;
+    top: 100%;
   }
-50% {
-   top: 40%;
+  50% {
+    top: 40%;
   }
   100% {
-     top: 50%;
-     background: #66FCF1;
-  }	
+    top: 50%;
+    background: #66fcf1;
+  }
 }
 @keyframes moveUp {
   0% {
-      background: #66FCF1;
-      top: 100%;
+    background: #66fcf1;
+    top: 100%;
   }
-50% {
-   top: 40%;
+  50% {
+    top: 40%;
   }
   100% {
-     top: 50%;
-     background: #66FCF1;
-  }	
+    top: 50%;
+    background: #66fcf1;
+  }
 }
 @-webkit-keyframes materia_landscape {
   0% {
-      background: #272727;
+    background: #272727;
   }
   50% {
-      -webkit-border-radius: 4px;
+    -webkit-border-radius: 4px;
   }
   100% {
-      width: 440px;
-      height: 280px;
-      background: #272727;
-      -webkit-border-radius: 4px;
+    width: 440px;
+    height: 280px;
+    background: #272727;
+    -webkit-border-radius: 4px;
   }
 }
 @keyframes materia_landscape {
   0% {
-      background: #E0E0E0;
+    background: #e0e0e0;
   }
   50% {
-      border-radius: 4px;
+    border-radius: 4px;
   }
   100% {
-      width: 440px;
-      height: 280px;
-      background: #272727;
-      border-radius: 4px;
+    width: 440px;
+    height: 280px;
+    background: #272727;
+    border-radius: 4px;
   }
 }
 @-webkit-keyframes materia_portrait {
-0% {
-  background: #272727;
-}
-50% {
-  -webkit-border-radius: 4px;
-}
-100% {
-  width: 280px;
-  height: 440px;
-  background: #272727;
-  -webkit-border-radius: 4px;
-}
+  0% {
+    background: #272727;
+  }
+  50% {
+    -webkit-border-radius: 4px;
+  }
+  100% {
+    width: 280px;
+    height: 440px;
+    background: #272727;
+    -webkit-border-radius: 4px;
+  }
 }
 @keyframes materia_portrait {
-0% {
-  background: #272727;
-}
-50% {
-  border-radius: 4px;
-}
-100% {
-  width: 280px;
-  height: 440px;
-  background: #272727;
-  border-radius: 4px;
-}
+  0% {
+    background: #272727;
+  }
+  50% {
+    border-radius: 4px;
+  }
+  100% {
+    width: 280px;
+    height: 440px;
+    background: #272727;
+    border-radius: 4px;
+  }
 }
 @-webkit-keyframes moveIn {
   0% {
-      margin-top: 50px;
-      opacity: 0;
+    margin-top: 50px;
+    opacity: 0;
   }
-100% { 
-      opacity: 1;
-      margin-top: -20px;
-  }	
+  100% {
+    opacity: 1;
+    margin-top: -20px;
+  }
 }
 @keyframes moveIn {
   0% {
-      margin-top: 50px;
-      opacity: 0;
+    margin-top: 50px;
+    opacity: 0;
   }
-100% { 
-      opacity: 1;
-      margin-top: -20px;
-  }	
+  100% {
+    opacity: 1;
+    margin-top: -20px;
+  }
 }
 @-webkit-keyframes scaleIn {
   0% {
-      -webkit-transform: scale(0);
+    -webkit-transform: scale(0);
   }
-100% { 
-      -webkit-transform: scale(1);
-  }	
+  100% {
+    -webkit-transform: scale(1);
+  }
 }
 @keyframes scaleIn {
   0% {
-      transform: scale(0);
+    transform: scale(0);
   }
-100% { 
-      transform: scale(1);
-  }	
+  100% {
+    transform: scale(1);
+  }
 }
 @-webkit-keyframes ripple {
   0% {
-      transform: scale3d(0, 0, 0); 
+    transform: scale3d(0, 0, 0);
   }
-  50%, 100% {
-      -webkit-transform: scale3d(1, 1, 1);
+  50%,
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
   }
   100% {
-      opacity: 0;
+    opacity: 0;
   }
 }
 @keyframes ripple {
   0% {
-      transform: scale3d(0, 0, 0); 
+    transform: scale3d(0, 0, 0);
   }
-  50%, 100% {
-      transform: scale3d(1, 1, 1);
+  50%,
+  100% {
+    transform: scale3d(1, 1, 1);
   }
   100% {
-      opacity: 0;
+    opacity: 0;
   }
 }
 
@@ -481,16 +500,16 @@ html {
   0% {
     opacity: 0;
     -webkit-transform: scale(0) translateY(50%);
-            transform: scale(0) translateY(50%);
+    transform: scale(0) translateY(50%);
   }
   90% {
     -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    transform: scale(1.05);
   }
   100% {
     opacity: 1;
     -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
   }
 }
 
@@ -498,27 +517,27 @@ html {
   0% {
     opacity: 0;
     -webkit-transform: scale(0) translateY(50%);
-            transform: scale(0) translateY(50%);
+    transform: scale(0) translateY(50%);
   }
   90% {
     -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    transform: scale(1.05);
   }
   100% {
     opacity: 1;
     -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
   }
 }
 .container {
-  float:left;
+  float: left;
   margin: 0.5em;
 }
 
 .card {
   width: 20em;
   background-color: #292929;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .card:hover {
   box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.2);
@@ -534,7 +553,7 @@ html {
   position: absolute;
   width: 4em;
   height: 4em;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-decoration: none;
 }
 
@@ -547,7 +566,7 @@ html {
 }
 
 .card__header-title {
-  margin: 0 0 .25em;
+  margin: 0 0 0.25em;
   color: white;
 }
 
@@ -562,18 +581,18 @@ html {
   top: 50%;
   margin-top: -1em;
   -webkit-transform: translateX(-20%);
-          transform: translateX(-20%);
+  transform: translateX(-20%);
   width: 2em;
   height: 2em;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-decoration: none;
 }
 
 /* */
-.projectList{
+.projectList {
   clear: left;
 }
 
-.projectsTitle{
+.projectsTitle {
   color: white;
 }

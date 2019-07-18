@@ -1,83 +1,235 @@
 import React from 'react';
+import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Slide from '@material-ui/core/Slide';
-import { Link } from 'react-router-dom';
+import Badge from '@material-ui/core/Badge';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import BlogIcon from '@material-ui/icons/RateReview';
+import HomeIcon from '@material-ui/icons/Home';
+import MoreIcon from '@material-ui/icons/MoreVert';
+import CVIcon from '@material-ui/icons/ListAlt';
+import { Link, withRouter } from 'react-router-dom';
 
-function HideOnScroll(props) {
-  const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
-  const trigger = useScrollTrigger({ target: window ? window() : undefined });
-
-  return (
-    <Slide appear={false} direction='down' in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
-
-const Navbar = props => {
-  return (
-    <React.Fragment>
-      <CssBaseline />
-      <HideOnScroll {...props}>
-        <AppBar style={style.Appbar}>
-          <Toolbar style={style.Brand}>
-            <Typography variant='h6'>Diego Pronesti</Typography>
-            <section style={style.Menu}>
-              <Link to='/' style={style.MenuA}>
-                <Typography style={style.MenuLinks} variant='h6'>
-                  Home
-                </Typography>
-              </Link>
-              <Link to='/blog' style={style.MenuA}>
-                <Typography style={style.MenuLinks} variant='h6'>
-                  Blog
-                </Typography>
-              </Link>
-              <a
-                style={style.MenuA}
-                href='https://drive.google.com/file/d/1nrfufMZC3klhV1tRadNptU1-aHY52QHG/view?usp=sharing'>
-                <Typography style={style.MenuLinks} variant='h6'>
-                  CV
-                </Typography>
-              </a>
-            </section>
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
-      <Toolbar />
-    </React.Fragment>
-  );
-};
-
-const style = {
-  Appbar: {
-    backgroundColor: '#272727',
-    display: 'auto'
+const useStyles = makeStyles(theme => ({
+  grow: {
+    flexGrow: 1
   },
-  Brand: {
-    color: '#66FCF1',
-    flex: 1
+  menuButton: {
+    marginRight: theme.spacing(2)
   },
-  Menu: {
+  title: {
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block'
+    }
+  },
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25)
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: 'auto'
+    }
+  },
+  searchIcon: {
+    width: theme.spacing(7),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
     display: 'flex',
-    color: '#66FCF3',
-    marginLeft: 'auto',
-    marginRight: 5
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  MenuLinks: {
-    padding: 10
-  },
-  MenuA: {
-    textDecoration: 'none',
+  inputRoot: {
     color: 'inherit'
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 7),
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: 200
+    }
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex'
+    }
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none'
+    }
   }
+}));
+
+const PrimarySearchAppBar = props => {
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  function handleProfileMenuOpen(event) {
+    setAnchorEl(event.currentTarget);
+  }
+
+  function handleMobileMenuClose() {
+    setMobileMoreAnchorEl(null);
+  }
+
+  function handleMenuClose() {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  }
+
+  function handleMobileMenuOpen(event) {
+    setMobileMoreAnchorEl(event.currentTarget);
+  }
+
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}>
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+    </Menu>
+  );
+
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}>
+      <MenuItem component={Link} to='/'>
+        <IconButton aria-label='Show Home' color='inherit'>
+          <Badge badgeContent={0} color='secondary'>
+            <HomeIcon />
+          </Badge>
+        </IconButton>
+        <p>Home</p>
+      </MenuItem>
+      <MenuItem component={Link} to='/blog'>
+        <IconButton aria-label='Show blog' color='inherit'>
+          <Badge badgeContent={0} color='secondary'>
+            <BlogIcon />
+          </Badge>
+        </IconButton>
+        <p>Blog</p>
+      </MenuItem>
+      <MenuItem
+        component='A'
+        href='https://drive.google.com/file/d/1nrfufMZC3klhV1tRadNptU1-aHY52QHG/view?usp=sharing'>
+        <IconButton aria-label='CV' color='inherit'>
+          <Badge badgeContent={0} color='secondary'>
+            <CVIcon />
+          </Badge>
+        </IconButton>
+        <p>CV</p>
+      </MenuItem>
+
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          aria-label='Account of current user'
+          aria-controls='primary-search-account-menu'
+          aria-haspopup='true'
+          color='inherit'>
+          <AccountCircle />
+        </IconButton>
+        <p>Profile</p>
+      </MenuItem>
+    </Menu>
+  );
+
+  return (
+    <div className={classes.grow}>
+      <AppBar position='static' color=''>
+        <Toolbar>
+          <Typography
+            className={classes.title}
+            variant='h6'
+            noWrap
+            color='primary'>
+            Diego Pronesti
+          </Typography>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <IconButton aria-label='Show Home' color='' component={Link} to='/'>
+              <Badge badgeContent={0} color='secondary'>
+                <HomeIcon />
+              </Badge>
+            </IconButton>
+
+            <IconButton
+              aria-label='Show Blog'
+              color=''
+              component={Link}
+              to='/blog'>
+              <Badge badgeContent={0} color='secondary'>
+                <BlogIcon />
+              </Badge>
+            </IconButton>
+
+            <IconButton
+              aria-label='CV'
+              color=''
+              component='a'
+              href='https://drive.google.com/file/d/1nrfufMZC3klhV1tRadNptU1-aHY52QHG/view?usp=sharing'>
+              <Badge badgeContent={0} color='secondary'>
+                <CVIcon />
+              </Badge>
+            </IconButton>
+            <IconButton
+              edge='end'
+              aria-label='Account of current user'
+              aria-controls={menuId}
+              aria-haspopup='true'
+              onClick={handleProfileMenuOpen}
+              color='inherit'>
+              <AccountCircle />
+            </IconButton>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label='Show more'
+              aria-controls={mobileMenuId}
+              aria-haspopup='true'
+              onClick={handleMobileMenuOpen}
+              color='inherit'>
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
+    </div>
+  );
 };
 
-export default Navbar;
+export default withRouter(PrimarySearchAppBar);

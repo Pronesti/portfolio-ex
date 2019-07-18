@@ -22,7 +22,7 @@ const ProjectList = () => {
 
   const showList = (
     <div className='projectList'>
-      <Typography variant='h3' className="projectsTitle">Projects:</Typography>
+      <Typography variant='h3' className="projectsTitle" color="primary">Projects:</Typography>
       {projectList.slice(1,7).map(project => (
         <ProjectCard key={project.id} project={project} />
       ))}

@@ -3,11 +3,46 @@ import {motion} from 'framer-motion';
 import linkedin from '../assets/linkedin.png';
 import github from '../assets/github.png';
 import email from '../assets/gmail.png';
+import {Card, CardActions, CardHeader, IconButton } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles(theme => ({
+  card: {
+    maxWidth: 400,
+  },
+  actions: {
+    textAlign: 'center',
+  }
+}));
 
 const ProfileCard = () => {
+  const classes = useStyles();
     return (
-        <aside className='profile-card'>
+      <Card className={classes.card}>
+      <CardHeader
+        title="Diego Pronesti"
+        subheader="Web Developer"
+      />
+     <img src="https://avatars2.githubusercontent.com/u/34582381?s=460&v=4" alt="profile" />
+      <CardActions className={classes.actions}>
+        <IconButton>
+        <motion.img src={email} alt="email" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}/>
+        </IconButton>
+        <IconButton aria-label="Share">
+        <motion.img src={github} alt="github" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}/>
+        </IconButton>
+        <IconButton>
+        <motion.img src={linkedin} alt="linkedin" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}/>
+        </IconButton>
+      </CardActions>
+      </Card>  
+    )
+}
+
+export default ProfileCard
+
+/*
+<aside className='profile-card'>
         <header>
           <a href='https://www.diegopronesti.com.ar'>
             <img
@@ -54,7 +89,5 @@ const ProfileCard = () => {
           </li>
         </ul>
       </aside>
-    )
-}
 
-export default ProfileCard
+      */
